@@ -29,7 +29,7 @@ def dump_benchmark(name, dumps):
 
 
 print("> Dump")
-dump_benchmark("Python", json.dumps)
+dump_benchmark("json", json.dumps)
 # orjson only outputs bytes, but often we need unicode:
 dump_benchmark("orjson", lambda s: str(orjson.dumps(s), "utf-8"))
 dump_benchmark("rapidjson", rapidjson.dumps)
@@ -49,7 +49,7 @@ def load_benchmark(name, load):
 
 
 print("> Load")
-load_benchmark("Python", json.loads)
+load_benchmark("json", json.loads)
 load_benchmark("orjson", orjson.loads)
 load_benchmark("rapidjson", rapidjson.loads)
 load_benchmark("hyperjson", hyperjson.loads)
