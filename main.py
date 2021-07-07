@@ -7,6 +7,7 @@ import orjson
 import rapidjson
 import simdjson
 import simplejson
+import ujson
 
 m = {
     "timestamp": 1556283673.1523004,
@@ -35,6 +36,7 @@ dump_benchmark("rapidjson", rapidjson.dumps)
 dump_benchmark("hyperjson", hyperjson.dumps)
 dump_benchmark("simdjson", simdjson.dumps)
 dump_benchmark("simplejson", simplejson.dumps)
+dump_benchmark("ujson", ujson.dumps)
 
 n = json.dumps(m)
 
@@ -56,3 +58,4 @@ load_benchmark(
 )
 load_benchmark("simdjson", simdjson.loads)
 load_benchmark("simplejson", simplejson.loads)
+load_benchmark("ujson", ujson.loads)
